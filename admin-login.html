@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 로그인</title>
+    <script>
+        function login() {
+            const id = document.getElementById("adminId").value;
+            const pw = document.getElementById("adminPw").value;
+            if (id === "0331" && pw === "0331") {
+                window.location.href = "admin.html";
+            } else {
+                alert("아이디 또는 비밀번호가 잘못되었습니다.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>관리자 로그인</h1>
+    아이디: <input type="text" id="adminId"><br>
+    비밀번호: <input type="password" id="adminPw"><br>
+    <button onclick="login()">로그인</button>
+</body>
+</html>

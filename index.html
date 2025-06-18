@@ -2,19 +2,23 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>홍루이젠 이천안흥점</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>메뉴 선택</title>
+    <script>
+        function goToOrder(name, description, image) {
+            localStorage.setItem("selectedItem", JSON.stringify({name, description, image}));
+            window.location.href = "order.html";
+        }
+    </script>
 </head>
 <body>
-  <div class="container">
-    <h1>홍루이젠 이천안흥점</h1>
-    <p>배달 및 예약주문 시 2일 전 예약해주세요.</p>
-    <div class="buttons">
-      <a href="menu.html" class="btn">메뉴 보기</a>
-      <a href="order.html" class="btn">예약 주문하기</a>
+    <h1>메뉴 선택</h1>
+    <div onclick="goToOrder('불고기버거', '맛있는 불고기버거', 'https://via.placeholder.com/100')">
+        <img src="https://via.placeholder.com/100" alt="불고기버거"><br>
+        <strong>불고기버거</strong><br>
+        맛있는 불고기버거
     </div>
-  </div>
+    <br>
+    <a href="admin-login.html">관리자 로그인</a>
 </body>
 </html>

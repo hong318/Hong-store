@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 페이지</title>
+    <script>
+        function addMenu() {
+            const name = document.getElementById("menuName").value;
+            const description = document.getElementById("menuDesc").value;
+            const image = document.getElementById("menuImg").value;
+            const menu = JSON.parse(localStorage.getItem("menuList") || "[]");
+            menu.push({name, description, image});
+            localStorage.setItem("menuList", JSON.stringify(menu));
+            alert("메뉴가 추가되었습니다.");
+        }
+    </script>
+</head>
+<body>
+    <h1>관리자 페이지</h1>
+    메뉴 이름: <input type="text" id="menuName"><br>
+    메뉴 설명: <input type="text" id="menuDesc"><br>
+    이미지 주소(URL): <input type="text" id="menuImg"><br>
+    <button onclick="addMenu()">메뉴 추가</button>
+</body>
+</html>
